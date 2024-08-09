@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- FIM GOOGLE FONTS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- FIM BOOTSTRAP ICONS -->
+    <title>Portifolio</title>
+    <style>
+        /* Estilo base para o menu desktop */
+        .menu-desktop {
+            display: flex;
+        }
+
+
+        /* Esconder o menu mobile por padrão */
+        .menu-mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 250px;
+            height: 100%;
+            background-color: #b9dae7;
+            box-shadow: -2px 0 5px rgb(36, 43, 42);
+            z-index: 1000;
+            transition: right 0.3s ease;
+        }
+
+
+        /* Mostrar o menu quando a classe 'active' é adicionada */
+        .menu-mobile-nav.active {
+            right: 0;
+        }
+
+
+        /* Estilos do botão de hambúrguer */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 1001;
+            color: white; /* Traços do menu mobile em branco */
+        }
+
+
+        /* Estilos para o overlay */
+        .overlay-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(206, 226, 243, 0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+
+        .overlay-menu.active {
+            display: block;
+            opacity: 1;
+        }
+
+
+        /* Tornar o menu mobile visível em telas pequenas */
+        @media screen and (max-width: 768px) {
+            .menu-desktop {
+                display: none;
+            }
+
+
+            .hamburger {
+                display: block;
+            }
+
+
+            .txt-topo-site h1 {
+                margin-left: 20px; /* Ajuste a margem para mover o nome mais para cima */
+                margin-top: 20px; /* Ajuste a margem superior */
+            }
+
+
+            .txt-topo-site p {
+                margin-left: 20px; /* Ajuste a margem para alinhar o texto */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="https://img.freepik.com/fotos-premium/retrato-de-um-gato-adoravel-em-um-fundo-preto-isolado-o-gato-parece-um-pouco-assustado_502065-2204.jpg" width="130px" alt="">
+                </a>
+            </div><!--logo-->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="bi bi-list"></i>
+            </div>
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#topo-do-site">Início</a></li>
+                    <li><a href="#especialidades">Especialidade</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="https://gabystella3.github.io/projetos/">Projetos</a></li>
+                </ul>
+            </nav>
+            <div class="menu-mobile">
+                <!-- Menu mobile removido daqui e movido para overlay -->
+            </div><!--menu-mobile-->
+            <div class="overlay-menu" id="overlay-menu">
+                <nav class="menu-mobile-nav">
+                    <ul>
+                        <li><a href="#topo-do-site" onclick="toggleMenu()">Início</a></li>
+                        <li><a href="#especialidades" onclick="toggleMenu()">Especialidade</a></li>
+                        <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
+                        <li><a href="https://gabystella3.github.io/projetos/" onclick="toggleMenu()">Projetos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div><!--interface-->
+    </header>
+
+
+    <main>
+        <section id="topo-do-site" class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <div class="txt-topo-site">
+                            <h1 style="margin-left: 209px; margin-top: 20px;">GABRIELLY LOWRDES:)<span></span></h1>
+                            <p style="margin-left: 209px;">Bem-vindos! Sou uma estudante de Informática II, determinada a alcançar minha formação como técnica em informática.</p>
+                        </div>
+                        <div class="btn-contato">
+                            <a href="#">
+                              
+                            </a>
+                        </div>
+                    </div><!--txt-topo-site-->
+                    <div class="img-topo-site">
+                        <img src="https://www.bloomberglinea.com/resizer/G0z-bSCEZbSGPwiIza9DYEvx9ao=/600x0/filters:format(webp):quality(75):focal(1600x660:1610x670)/cloudfront-us-east-1.images.arcpublishing.com/bloomberglinea/O6YGON2I3RGJ5PO7OZMCYRNMRU.jpg" width="995px" alt="">
+                    </div><!--img-topo-site-->
+                </div>
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+
+        <section id="especialidades" class="especiliadades">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-balloon-heart"></i>
+                        <h3>Atividades Extracurriculares</h3>
+                        <p>Como membro ativa do Clube do Livro da escola, participei de diversas atividades enriquecedoras. Entre as atividades, assistimos a filmes baseados em livros, lemos uma variedade de obras disponíveis na biblioteca, e fizemos viagens para feiras do livro, onde tivemos a oportunidade de explorar novos títulos e autores.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-bank"></i>
+                        <h3>Experiência Prática</h3>
+                        <p>Participei de uma prática de criptografia de cabos em dupla, com a orientação do professor Carlos. Durante essa prática, trabalhamos juntos para aprender e aplicar técnicas de criptografia de cabos, o que nos proporcionou uma valiosa experiência prática na área.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-bookmark-heart"></i>
+                        <h3>Projetos acadêmicos</h3>
+                        <p>Um dos meus projetos acadêmicos é o meu trabalho de conclusão de curso (TCC) é um jogo de ortografia que aborda de forma lúdica e interativa o aprendizado correto da língua portuguesa. Através de desafios envolventes e mecânicas dinâmicas, os jogadores serão incentivados a aprimorar suas habilidades ortográficas enquanto se divertem.</p>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especialidades-->
+
+
+        <section id="sobre" class="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="b.jpeg" width="380px" alt="">
+                    </div><!--img-sobre-->
+                    <div class="txt-sobre">
+                        <h2>MUITO PRAZER, <span>SOU GABRIELLY LOWRDES.</span></h2>
+                        <p>Uma aluna de informática</p>
+                        <p>e sou uma estudante dedicada e apaixonada por tecnologia. Estou no início da minha jornada nesse incrível mundo da tecnologia e estou animada para aprender mais.</p>
+                        <div class="btn-social">
+                            <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+                            <a href="#"><button><i class="bi bi-youtube"></i></button></a>
+                            <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+                        </div><!--btn-social-->
+                    </div><!--txt-sobre-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+    </main>
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-mobile-nav');
+            const overlay = document.getElementById('overlay-menu');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+
+
