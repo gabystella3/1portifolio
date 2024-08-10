@@ -19,26 +19,30 @@
             display: flex;
         }
 
-
         /* Esconder o menu mobile por padrão */
         .menu-mobile-nav {
             position: fixed;
             top: 0;
-            right: -100%;
-            width: 250px;
+            right: 0;
+            width: 100%;
             height: 100%;
             background-color: #b9dae7;
             box-shadow: -2px 0 5px rgb(36, 43, 42);
             z-index: 1000;
             transition: right 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
         }
-
 
         /* Mostrar o menu quando a classe 'active' é adicionada */
         .menu-mobile-nav.active {
             right: 0;
         }
-
 
         /* Estilos do botão de hambúrguer */
         .hamburger {
@@ -51,7 +55,6 @@
             z-index: 1001;
             color: white; /* Traços do menu mobile em branco */
         }
-
 
         /* Estilos para o overlay */
         .overlay-menu {
@@ -67,12 +70,10 @@
             transition: opacity 0.3s ease;
         }
 
-
         .overlay-menu.active {
             display: block;
             opacity: 1;
         }
-
 
         /* Tornar o menu mobile visível em telas pequenas */
         @media screen and (max-width: 768px) {
@@ -80,21 +81,43 @@
                 display: none;
             }
 
-
             .hamburger {
                 display: block;
             }
-
 
             .txt-topo-site h1 {
                 margin-left: 20px; /* Ajuste a margem para mover o nome mais para cima */
                 margin-top: 20px; /* Ajuste a margem superior */
             }
 
-
             .txt-topo-site p {
                 margin-left: 20px; /* Ajuste a margem para alinhar o texto */
             }
+        }
+
+        /* Estilos para o menu mobile */
+        .menu-mobile-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .menu-mobile-nav li {
+            margin: 15px 0;
+        }
+
+        .menu-mobile-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .menu-mobile-nav a:hover {
+            color: #4a90e2; /* Cor de destaque ao passar o mouse */
         }
     </style>
 </head>
@@ -117,13 +140,10 @@
                     <li><a href="https://gabystella3.github.io/projetos/">Projetos</a></li>
                 </ul>
             </nav>
-            <div class="menu-mobile">
-                <!-- Menu mobile removido daqui e movido para overlay -->
-            </div><!--menu-mobile-->
             <div class="overlay-menu" id="overlay-menu">
                 <nav class="menu-mobile-nav">
                     <ul>
-                        <li><a href="#topo-do-site" onclick="toggleMenu()">Início</a></li>
+                        <li><a href="https://gabystella3.github.io/menuverdade/" onclick="toggleMenu()">Menu</a></li>
                         <li><a href="#especialidades" onclick="toggleMenu()">Especialidade</a></li>
                         <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
                         <li><a href="https://gabystella3.github.io/projetos/" onclick="toggleMenu()">Projetos</a></li>
@@ -133,20 +153,15 @@
         </div><!--interface-->
     </header>
 
-
     <main>
         <section id="topo-do-site" class="topo-do-site">
             <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-site">
-                        <div class="txt-topo-site">
-                            <h1 style="margin-left: 209px; margin-top: 20px;">GABRIELLY LOWRDES:)<span></span></h1>
-                            <p style="margin-left: 209px;">Bem-vindos! Sou uma estudante de Informática II, determinada a alcançar minha formação como técnica em informática.</p>
-                        </div>
+                        <h1 style="margin-left: 209px; margin-top: 20px;">GABRIELLY LOWRDES:)<span></span></h1>
+                        <p style="margin-left: 209px;">Bem-vindos! Sou uma estudante de Informática II, determinada a alcançar minha formação como técnica em informática.</p>
                         <div class="btn-contato">
-                            <a href="#">
-                              
-                            </a>
+                            <a href="#contato">Contato</a>
                         </div>
                     </div><!--txt-topo-site-->
                     <div class="img-topo-site">
@@ -155,7 +170,6 @@
                 </div>
             </div><!--interface-->
         </section><!--topo-do-site-->
-
 
         <section id="especialidades" class="especiliadades">
             <div class="interface">
@@ -180,7 +194,6 @@
             </div><!--interface-->
         </section><!--especialidades-->
 
-
         <section id="sobre" class="sobre">
             <div class="interface">
                 <div class="flex">
@@ -202,7 +215,6 @@
         </section><!--sobre-->
     </main>
 
-
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu-mobile-nav');
@@ -213,6 +225,5 @@
     </script>
 </body>
 </html>
-
 
 
